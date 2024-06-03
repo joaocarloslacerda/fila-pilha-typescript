@@ -1,12 +1,26 @@
-interface Iitems {
-    item: string[]
+interface Iperson {
+    name: string
+    surname: string
+    yersOld: number
+    phone: string
 }
 
-class List implements Iitems {
-    item: string[]
+class List implements Iperson{
+    name: string;
+    surname: string;
+    yersOld: number;
+    phone: string;
+    private listPerson: Iperson[] = [];
 
-    // private item = []
-    constructor(item: string[]){
-        this.item = item;
+    constructor(name: string, surname: string, yersOld: number, phone: string){
+        this.name = name;
+        this.surname = surname;
+        this.yersOld = yersOld;
+        this.phone = phone;
     }
+
 }
+
+let employee = new List(["joao"], ["lacerda"], [26], ["4564565465"]);
+
+// console.log(employee.item)
