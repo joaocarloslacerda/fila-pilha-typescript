@@ -1,26 +1,19 @@
-interface Iperson {
-    name: string
-    surname: string
-    yersOld: number
-    phone: string
+interface IList {
+    // list: Array<any>
 }
 
-class List implements Iperson{
-    name: string;
-    surname: string;
-    yersOld: number;
-    phone: string;
-    private listPerson: Iperson[] = [];
+class List implements IList{
+    constructor(protected list: Array<any>){}
+}
 
-    constructor(name: string, surname: string, yersOld: number, phone: string){
-        this.name = name;
-        this.surname = surname;
-        this.yersOld = yersOld;
-        this.phone = phone;
+class Pilha extends List{
+    constructor(startList: Array<string>){
+        super([startList])
     }
-
 }
 
-let employee = new List(["joao"], ["lacerda"], [26], ["4564565465"]);
-
-// console.log(employee.item)
+class Fila extends List{
+    constructor(startFila: Array<string>){
+        super([startFila])
+    }
+}
