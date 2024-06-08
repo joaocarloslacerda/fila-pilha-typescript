@@ -10,6 +10,13 @@ class Pilha extends List{
     constructor(startList: Array<string>){
         super([startList])
     }
+
+    public push(newElement: string): Array<string>{
+        
+        const newList = [...this.list, newElement];
+
+        return this.list = newList
+    }
 }
 
 class Fila extends List{
